@@ -117,6 +117,12 @@
     {{ 'shopify_common.js' | shopify_asset_url | script_tag }}
   {% endif %}
 
+  <!-- Remember to include jQuery :) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+
+  <!-- jQuery Modal -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
 
   <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -152,6 +158,24 @@
   {% endif %}
 
   {{ 'theme.js' | asset_url | script_tag }}
+
+<div class="modal" id="ex6-1" style="display:none;">
+  <p>I'm the first modal. <a href="#ex6-2" rel="modal:open">Open second modal...</a></p>
+</div>
+
+<div class="modal" id="ex6-2" style="display:none;">
+  <p>I'm the second modal. <a href="#ex6-3" rel="modal:open">Open third modal...</a></p>
+</div>
+
+<div class="modal" id="ex6-3" style="display:none;">
+  <p>I'm the third modal. You get the idea.</p>
+</div>
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $('#sub-modal').modal('show');
+    });
+  </script>
 
 </body>
 </html>
